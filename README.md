@@ -20,6 +20,19 @@ cellar pull -h
 cellar pull --source content/example --dest .vaulted-content
 
 ```
+
+```js
+import cellar from 'aem-cellar';
+
+cellar.pull({
+    source: 'content/example',
+    dest: '.vaulted-content',
+    host: 'localhost',
+    port: '4502',
+    user: 'admin',
+    pass: 'admin'
+});
+```
 ### options
 #### source
 Type: `string`
@@ -56,6 +69,19 @@ cellar push -h
 
 cellar push --source content/example --dest /
 
+```
+
+```js
+import cellar from 'aem-cellar';
+
+cellar.push({
+    source: 'content/example',
+    dest: '/',
+    host: 'localhost',
+    port: '4502',
+    user: 'admin',
+    pass: 'admin'
+});
 ```
 ### options
 #### source
@@ -94,5 +120,10 @@ cellar clean -h
 
 cellar clean example-folder/
 
+```
+```js
+import cellar from 'aem-cellar';
+
+cellar.clean('./example-folder');
 ```
 This is for cleaning up a local path and removing the folder. Basically a wrapper around `rm -rf`
