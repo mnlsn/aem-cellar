@@ -6,5 +6,5 @@ npm install -g aem-cellar
 `
 or
 `
-npm install --save-dev cellar
+npm install --save-dev aem-cellar
 `
