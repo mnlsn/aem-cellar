@@ -1,6 +1,6 @@
 {
   "name": "aem-cellar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Wrapper around AEM Vault for Node.js",
   "main": "dist/index.js",
   "bin": {
@@ -9,7 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/babel src --out-dir dist",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -32,9 +33,7 @@
     "chalk": "^1.1.3",
     "commander": "^2.9.0",
     "fs-extra": "^0.30.0",
-    "node-progress": "^0.1.0"
-  },
-  "devDependencies": {
+    "node-progress": "^0.1.0",
     "babel-cli": "^6.10.1",
     "babel-core": "^6.10.4",
     "babel-preset-es2015": "^6.9.0",
