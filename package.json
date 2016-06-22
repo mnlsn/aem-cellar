@@ -1,5 +1,5 @@
 {
-  "name": "cellar",
+  "name": "aem-cellar",
   "version": "1.0.0",
   "description": "Wrapper around AEM Vault for Node.js",
   "main": "dist/index.js",
