@@ -1,6 +1,6 @@
 {
   "name": "aem-cellar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wrapper around AEM Vault for Node.js",
   "main": "dist/index.js",
   "bin": {
