@@ -7,7 +7,7 @@ const baseDir = path.join(__dirname, '../..');
 const Progress = require('node-progress').get();
 const wait = new Progress();
 
-export function push(options) {
+export function push(options = {host: 'localhost', port: '4502', user: 'admin', pass: 'admin', 'dest': '/'}) {
     const env = `http://${options.host}:${options.port}/crx`;
     const localPath = path.join(process.cwd(), options.source);
     const sitePath = path.join('/', options.dest);

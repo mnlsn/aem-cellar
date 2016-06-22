@@ -7,7 +7,7 @@ const baseDir = path.join(__dirname, '../..');
 const Progress = require('node-progress').get();
 const wait = new Progress();
 
-export function pull(options) {
+export function pull(options = {host: 'localhost', port: '4502', user: 'admin', pass: 'admin'}) {
     const env = `http://${options.host}:${options.port}/crx`;
     const destination = path.join(process.cwd(), options.dest);
     const sitePath = path.join('/', options.source);
@@ -28,7 +28,7 @@ export function pull(options) {
         if (err) {
             throw err;
         }
-        
+
         wait.finish();
         console.log(stdout);
         console.log(chalk.cyan(`Finished pulling content from ${sitePath} to ${destination}`));
