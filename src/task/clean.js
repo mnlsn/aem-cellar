@@ -11,7 +11,7 @@ export function clean(folder, cb) {
         console.log(chalk.cyan.bold(`${folder} has been cleared and deleted`));
 
         if (cb && typeof cb === 'function') {
-            cb(err, stdout, stderr);
+            cb();
         }
     });
 }
