@@ -7,7 +7,7 @@ const baseDir = path.join(__dirname, '../..');
 const Progress = require('node-progress').get();
 const wait = new Progress();
 
-export function push(options = {host: 'localhost', port: '4502', user: 'admin', pass: 'admin', 'dest': '/'}) {
+export function push(options, cb) {
     const env = `http://${options.host}:${options.port}/crx`;
     const localPath = path.join(process.cwd(), options.source);
     const sitePath = path.join('/', options.dest);
@@ -32,6 +32,10 @@ export function push(options = {host: 'localhost', port: '4502', user: 'admin', 
             wait.finish();
             console.log(stdout);
             console.log(chalk.cyan(`Finished uploading content from ${localPath} to ${sitePath}`));
+
+            if (cb && typeof cb === 'function') {
+                cb(err, stdout, stderr);
+            }
         });
     });
 }
